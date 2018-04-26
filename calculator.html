@@ -1,11 +1,41 @@
-<html>
+<html ng-app="calculatorApp">
     <head>
         <title>Calculator App</title>
-        <script src="angular.js"></script>
+        <link rel="stylesheet" href="css/calculator.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script src="app.js"></script>
     </head>
 
-    <body>
+    <body style="text-align: center">
         <h1>My Calculator App</h1>
+        <div ng-controller="CalculatorCtrl as ctrl">
+            <input type="text" ng-model="ctrl.input1">
+            <span ng-bind="ctrl.selectedOperation"></span>
+            <input type="text" ng-model="ctrl.input2">
+            <button ng-click="ctrl.computeResult()">=</button>
+            <span ng-bind="ctrl.resultValue"></span>
+            <p class="button textview">
+
+                <button ng-click="ctrl.buttonClicked('+')">+</button>
+                <button ng-click="ctrl.buttonClicked('-')">-</button>
+                <button ng-click="ctrl.buttonClicked('*')">x</button>
+                <button ng-click="ctrl.buttonClicked('/')">/</button>
+                <br>
+                <button ng-click="ctrl.buttonClicked('7')">7</button>
+                <button ng-click="ctrl.buttonClicked('8')">8</button>
+                <button ng-click="ctrl.buttonClicked('9')">9</button>
+                <button ng-click="ctrl.buttonClicked('*')">X</button>
+                <br>
+                <button ng-click="ctrl.buttonClicked('4')">4</button>
+                <button ng-click="ctrl.buttonClicked('5')">5</button>
+                <button ng-click="ctrl.buttonClicked('6')">6</button>
+                <button ng-click="ctrl.buttonClicked('-')">-</button>
+                <br>
+                <button ng-click="ctrl.buttonClicked('1')">1</button>
+                <button ng-click="ctrl.buttonClicked('2')">2</button>
+                <button ng-click="ctrl.buttonClicked('3')">3</button>
+                <button ng-click="ctrl.buttonClicked('+')">+</button>
+            </p>
+        </div>
     </body>
 </html>
