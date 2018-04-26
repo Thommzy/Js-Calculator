@@ -3,7 +3,20 @@
     height: 50px;
     font-size: 35px;
     cursor: pointer;
+
 }
 .body{
     text-align: center;
+}
+button{
+    background-color: #00E0C6; /* Green */
+    border: none;
+    padding: 38px 131px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+.row   {
+    font-size: 30px;
+    margin-bottom: 10px
 }

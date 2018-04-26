@@ -2,39 +2,94 @@
     <head>
         <title>Calculator App</title>
         <link rel="stylesheet" href="css/calculator.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script src="app.js"></script>
     </head>
 
-    <body style="text-align: center">
+    <body style="text-align: center; background: #AFD7F1; width: auto;">
         <h1>My Calculator App</h1>
         <div ng-controller="CalculatorCtrl as ctrl">
-            <input type="text" ng-model="ctrl.input1">
+            <input type="text" ng-model="ctrl.input1" placeholder="digit 1">
             <span ng-bind="ctrl.selectedOperation"></span>
-            <input type="text" ng-model="ctrl.input2">
+            <input type="text" ng-model="ctrl.input2" placeholder="digit 2">
             <button ng-click="ctrl.computeResult()">=</button>
             <span ng-bind="ctrl.resultValue"></span>
-            <p class="button textview">
+            <p class="button">
+                <!--<div class="row">-->
+                    <!--<div class="col-md-3 one">-->
+                        <!--<button ng-click="ctrl.buttonClicked('+')"><b>CE</b></button>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-3">-->
+                        <!--<button ng-click="ctrl.buttonClicked('-')"><b>C</b></button>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-3">-->
+                        <!--<button ng-click="ctrl.buttonClicked('*')"><b>%</b></button>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-3">-->
+                        <!--<button ng-click="ctrl.buttonClicked('/')"><b>&nbsp;X<sup>2</sup></b></button>-->
+                    <!--</div>-->
+                <!--</div>-->
 
-                <button ng-click="ctrl.buttonClicked('+')">+</button>
-                <button ng-click="ctrl.buttonClicked('-')">-</button>
-                <button ng-click="ctrl.buttonClicked('*')">x</button>
-                <button ng-click="ctrl.buttonClicked('/')">/</button>
-                <br>
-                <button ng-click="ctrl.buttonClicked('7')">7</button>
-                <button ng-click="ctrl.buttonClicked('8')">8</button>
-                <button ng-click="ctrl.buttonClicked('9')">9</button>
-                <button ng-click="ctrl.buttonClicked('*')">X</button>
-                <br>
-                <button ng-click="ctrl.buttonClicked('4')">4</button>
-                <button ng-click="ctrl.buttonClicked('5')">5</button>
-                <button ng-click="ctrl.buttonClicked('6')">6</button>
-                <button ng-click="ctrl.buttonClicked('-')">-</button>
-                <br>
-                <button ng-click="ctrl.buttonClicked('1')">1</button>
-                <button ng-click="ctrl.buttonClicked('2')">2</button>
-                <button ng-click="ctrl.buttonClicked('3')">3</button>
-                <button ng-click="ctrl.buttonClicked('+')">+</button>
+            <div class="row">
+                <div class="col-md-3 one">
+                    <button ng-click="ctrl.buttonClicked('+')"><b>7</b></button>
+                </div>
+                <div class="col-md-3">
+                    <button ng-click="ctrl.buttonClicked('-')"><b>8</b></button>
+                </div>
+                <div class="col-md-3">
+                    <button ng-click="ctrl.buttonClicked('*')"><b>9</b></button>
+                </div>
+                <div class="col-md-3">
+                    <button ng-click="ctrl.buttonClicked('/')"><b>/</b></button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 one">
+                    <button ng-click="ctrl.buttonClicked('+')"><b>4</b></button>
+                </div>
+                <div class="col-md-3">
+                    <button ng-click="ctrl.buttonClicked('-')"><b>5</b></button>
+                </div>
+                <div class="col-md-3">
+                    <button ng-click="ctrl.buttonClicked('*')"><b>6</b></button>
+                </div>
+                <div class="col-md-3">
+                    <button ng-click="ctrl.buttonClicked('*')"><b>X</b></button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 one">
+                    <button ng-click="ctrl.buttonClicked('+')"><b>1</b></button>
+                </div>
+                <div class="col-md-3">
+                    <button ng-click="ctrl.buttonClicked('-')"><b>2</b></button>
+                </div>
+                <div class="col-md-3">
+                    <button ng-click="ctrl.buttonClicked('*')"><b>3</b></button>
+                </div>
+                <div class="col-md-3">
+                    <button ng-click="ctrl.buttonClicked('-')"><b>-</b></button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 one">
+                    <button ng-click="ctrl.buttonClicked('+')"><b>.</b></button>
+                </div>
+                <div class="col-md-3">
+                    <button ng-click="ctrl.buttonClicked('-')"><b>0</b></button>
+                </div>
+                <div class="col-md-3">
+                    <button ng-click="ctrl.buttonClicked('*')"><b>=</b></button>
+                </div>
+                <div class="col-md-3">
+                    <button ng-click="ctrl.buttonClicked('+')"><b>+</b></button>
+                </div>
+            </div>
+
             </p>
         </div>
     </body>
