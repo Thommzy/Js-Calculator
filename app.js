@@ -1,26 +1,19 @@
 var app = angular.module("calculatorApp", []);
-app.controller("CalculatorCtrl", CalculatorCtrl);
+app.controller("calculatorCtrl", calc);
 
-function CalculatorCtrl() {
-    this.resultValue = 0;
-    this.buttonClicked = function(button) {
-        this.selectedOperation = button;
-    }
+function calc($scope) {
+    $scope.display = "";
 
-    this.computeResult = function() {
-        var number1 = parseFloat(this.input1);
-        var number2 = parseFloat(this.input2);
-            if (this.selectedOperation === '+'){
-                this.resultValue = number1 + number2;
-            }
-            else if (this.selectedOperation === '-'){
-            this.resultValue = number1 - number2;
-        }
-        else if (this.selectedOperation === '*'){
-            this.resultValue = number1 * number2;
-        }
-        else if (this.selectedOperation === '/'){
-            this.resultValue = number1 / number2;
-        }
-    }
+    $scope.math = function (val){
+        $scope.display += val;
+    };
+
+    $scope.c = function (val){
+        $scope.display = val;
+    };
+
+    $scope.e = function (val){
+        $scope.display = eval($scope.display);
+    };
+
 }

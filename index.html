@@ -7,90 +7,141 @@
         <script src="app.js"></script>
     </head>
 
-    <body style="text-align: center; background: #AFD7F1; width: auto;">
-        <h1>My Calculator App</h1>
-        <div ng-controller="CalculatorCtrl as ctrl">
-            <input type="text" ng-model="ctrl.input1" placeholder="digit 1">
-            <span ng-bind="ctrl.selectedOperation"></span>
-            <input type="text" ng-model="ctrl.input2" placeholder="digit 2">
-            <button ng-click="ctrl.computeResult()">=</button>
-            <span ng-bind="ctrl.resultValue"></span>
+    <body id="background" ng-controller="calculatorCtrl">
+        <h1 style="text-align: center;">My Calculator App</h1>
+        <div class="container">
+            <div class="display text-right"><input type="text" value="{{display}}" size="100%" id="display" readonly></div>
+            <div class="keys">
             <p class="button">
-                <!--<div class="row">-->
-                    <!--<div class="col-md-3 one">-->
-                        <!--<button ng-click="ctrl.buttonClicked('+')"><b>CE</b></button>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-3">-->
-                        <!--<button ng-click="ctrl.buttonClicked('-')"><b>C</b></button>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-3">-->
-                        <!--<button ng-click="ctrl.buttonClicked('*')"><b>%</b></button>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-3">-->
-                        <!--<button ng-click="ctrl.buttonClicked('/')"><b>&nbsp;X<sup>2</sup></b></button>-->
-                    <!--</div>-->
-                <!--</div>-->
+                <div class="row">
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="mrc" ng-click='c(not defined)'>
+                        </button>
+                    </div>
 
-            <div class="row">
-                <div class="col-md-3 one">
-                    <button ng-click="ctrl.buttonClicked('+')"><b>7</b></button>
-                </div>
-                <div class="col-md-3">
-                    <button ng-click="ctrl.buttonClicked('-')"><b>8</b></button>
-                </div>
-                <div class="col-md-3">
-                    <button ng-click="ctrl.buttonClicked('*')"><b>9</b></button>
-                </div>
-                <div class="col-md-3">
-                    <button ng-click="ctrl.buttonClicked('/')"><b>/</b></button>
-                </div>
-            </div>
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="+/-" ng-click='math("+/-")'>
+                        </button>
+                    </div>
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="%" ng-click="%">
+                        </button>
+                    </div>
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="&divide" ng-click='math("&divide")'>
+                        </button>
+                    </div>
 
-            <div class="row">
-                <div class="col-md-3 one">
-                    <button ng-click="ctrl.buttonClicked('+')"><b>4</b></button>
                 </div>
-                <div class="col-md-3">
-                    <button ng-click="ctrl.buttonClicked('-')"><b>5</b></button>
-                </div>
-                <div class="col-md-3">
-                    <button ng-click="ctrl.buttonClicked('*')"><b>6</b></button>
-                </div>
-                <div class="col-md-3">
-                    <button ng-click="ctrl.buttonClicked('*')"><b>X</b></button>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-md-3 one">
-                    <button ng-click="ctrl.buttonClicked('+')"><b>1</b></button>
+                <div class="row">
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="7" ng-click='math("7")'>
+                        </button>
+                    </div>
+
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="8" ng-click='math("8")'>
+                        </button>
+                    </div>
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="9" ng-click='math("9")'>
+                        </button>
+                    </div>
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="*" ng-click='math("x")'>
+                        </button>
+                    </div>
+
                 </div>
-                <div class="col-md-3">
-                    <button ng-click="ctrl.buttonClicked('-')"><b>2</b></button>
+
+                <div class="row">
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="4" ng-click='math("4")'>
+                        </button>
+                    </div>
+
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="5" ng-click='math("5")'>
+                        </button>
+                    </div>
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="6" ng-click='math("6")'>
+                        </button>
+                    </div>
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="-" ng-click='math("-")'>
+                        </button>
+                    </div>
+
                 </div>
-                <div class="col-md-3">
-                    <button ng-click="ctrl.buttonClicked('*')"><b>3</b></button>
+
+                <div class="row">
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="1" ng-click='math("1")'>
+                        </button>
+                    </div>
+
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="2" ng-click='math("2")'>
+                        </button>
+                    </div>
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="3" ng-click='math("3")'>
+                        </button>
+                    </div>
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="+" ng-click='math("+")'>
+                        </button>
+                    </div>
+
                 </div>
-                <div class="col-md-3">
-                    <button ng-click="ctrl.buttonClicked('-')"><b>-</b></button>
+
+                <div class="row">
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="0" ng-click='math("0")'>
+                        </button>
+                    </div>
+
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="." ng-click='math(".")'>
+                        </button>
+                    </div>
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="c" ng-click='c("")'>
+                        </button>
+                    </div>
+                    <div class="col-md-3 one">
+                        <button>
+                            <input type="button" class="button" value="=" ng-click='e()'>
+                        </button>
+                    </div>
+
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 one">
-                    <button ng-click="ctrl.buttonClicked('+')"><b>.</b></button>
-                </div>
-                <div class="col-md-3">
-                    <button ng-click="ctrl.buttonClicked('-')"><b>0</b></button>
-                </div>
-                <div class="col-md-3">
-                    <button ng-click="ctrl.buttonClicked('*')"><b>=</b></button>
-                </div>
-                <div class="col-md-3">
-                    <button ng-click="ctrl.buttonClicked('+')"><b>+</b></button>
-                </div>
-            </div>
+
+
 
             </p>
+            </div>
         </div>
     </body>
 </html>

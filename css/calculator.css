@@ -5,18 +5,33 @@
     cursor: pointer;
 
 }
+
+#background{
+    background: #00E0C6;
+}
 .body{
     text-align: center;
 }
 button{
     background-color: #00E0C6; /* Green */
     border: none;
-    padding: 38px 131px;
+    padding: 20px 13px 20px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
 }
 .row   {
-    font-size: 30px;
-    margin-bottom: 10px
+    margin-bottom: 0px;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+    border-top:1px solid #000;
+}
+input.button {
+    border: none;
+    background: #00E0C6;
+}
+
+.col-md-3.one {
+    border-right: 1px solid #000;
 }
